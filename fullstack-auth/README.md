@@ -17,4 +17,13 @@ pnpm dev
 ```
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+Now add shadcn packages:
 
+```bash
+pnpm dlx shadcn-ui@latest add button card form input
+```
+
+Add React Icons:
+```bash
+pnpm add react-icons
+```
