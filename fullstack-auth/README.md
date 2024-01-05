@@ -27,3 +27,9 @@ Add React Icons:
 ```bash
 pnpm add react-icons
 ```
+
+Add prisma:
+```bash
+npm i -D prisma
+npm i @prisma/client
+```
