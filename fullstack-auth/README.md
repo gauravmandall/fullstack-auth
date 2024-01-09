@@ -33,3 +33,41 @@ Add prisma:
 npm i -D prisma
 npm i @prisma/client
 ```
+
+add .env in gitignore and add .env file.
+
+now run following commands:
+```bash
+npx prisma init
+```
+it generates prisma folder, prisma/schema.prisma file and fill the .env file with fake DATABASE_URL.
+
+after changing the scheme.prisma and .env file run following commands:
+```bash
+npx prisma generate
+```
+and if runs successfully then run:
+```bash
+npx prisma db push
+npx i @auth/prisma-adapter
+```
+
+now copy User and Account model from @auth/prisma-adapter to schema.prisma file and add   password      String?
+to User model. then run following commands:
+```bash
+npx prisma generate
+npx prisma db push
+```
+
+
+now add bcrypt or bcryptjs:
+```bash
+npm i bcrypt
+npm i -D @types/bcrypt
+
+or
+
+npm i bcryptjs
+npm i -D @types/bcryptjs
+
+```
