@@ -71,6 +71,14 @@ npm i bcryptjs
 npm i -D @types/bcryptjs
 
 ```
+to view the database:
+```bash
+npx prisma studio
+```
 
+to reset the database:
+```bash
+npx prisma migrate reset
+```
 
-Timestamp: 2:17:57
+Timestamp: 3:08:14
