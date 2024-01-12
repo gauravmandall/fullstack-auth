@@ -81,4 +81,4 @@ to reset the database:
 npx prisma migrate reset
 ```
 
-Timestamp: 3:08:14
+Timestamp: 3:29:49
