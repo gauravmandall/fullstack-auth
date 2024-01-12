@@ -28,6 +28,10 @@ export const {
   },
   callbacks: {
     async signIn({ user, account }) {
+      console.log({
+        user,
+        account
+      })
       // Allow OAuth without email verification
       // TODO: Check this twice for production
       // if(account?.provider === "google" || "github" ) return true;

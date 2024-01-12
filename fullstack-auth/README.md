@@ -98,6 +98,11 @@ now add following packages:
 npm i resend
 ```
 
+Now add following packages:
+```bash
+npm i react-spinners
+```
+
 
 
 Timestamp: 3:29:49
