@@ -80,5 +80,24 @@ to reset the database:
 ```bash
 npx prisma migrate reset
 ```
+add `VerificationToken` model to schema.prisma file and run following commands:
+```bash
+npx prisma generate
+npx prisma db push
+```
+
+Now add following packages:
+```bash
+npm i uuid 
+npm i --save-dev @types/uuid
+```
+
+Now create an account on Resend and add the API key to .env file.
+now add following packages:
+```bash
+npm i resend
+```
+
+
 
 Timestamp: 3:29:49
