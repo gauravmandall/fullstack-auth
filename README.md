@@ -1,105 +1,131 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-# Full stack Authentication
+# Full stack Authentication with Next.js, Prisma, Next-auth, and Tailwind CSS
 
 ## Getting Started
 
-First, initialize the shadcn sdk:
 
-```bash
-pnpm dlx shadcn-ui@latest init
+Key Features:
+- 🔐 Next-auth v5 (Auth.js)
+- 🚀 Next.js 14 with server actions
+- 🔑 Credentials Provider
+- 🌐 OAuth Provider (Social login with Google & GitHub)
+- 🔒 Forgot password functionality
+- ✉️ Email verification
+- 📱 Two factor verification
+- 👥 User roles (Admin & User)
+- 🔓 Login component (Opens in redirect or modal)
+- 📝 Register component
+- 🤔 Forgot password component
+- ✅ Verification component
+- ⚠️ Error component
+- 🔘 Login button
+- 🚪 Logout button
+- 🚧 Role Gate
+- 🔍 Exploring next.js middleware
+- 📈 Extending & Exploring next-auth session
+- 🔄 Exploring next-auth callbacks
+- 👤 useCurrentUser hook
+- 🛂 useRole hook
+- 🧑 currentUser utility
+- 👮 currentRole utility
+- 🖥️ Example with server component
+- 💻 Example with client component
+- 👑 Render content for admins using RoleGate component
+- 🛡️ Protect API Routes for admins only
+- 🔐 Protect Server Actions for admins only
+- 📧 Change email with new verification in Settings page
+- 🔑 Change password with old password confirmation in Settings page
+- 🔔 Enable/disable two-factor auth in Settings page
+- 🔄 Change user role in Settings page (for development purposes only)
+
+### Prerequisites
+
+**Node version 18.7.x**
+
+### Cloning the repository
+
+```shell
+git clone https://github.com/gauravmandall/fullstack-auth.git
 ```
 
-Then, run the development server:
+### Install packages
 
-```bash
+```shell
+npm i
+
+# or
+
+yarn install
+
+# or
+
+pnpm install
+```
+
+### Setup .env file
+rename `.env.example` to `.env` and fill in the values
+
+
+```js
+DATABASE_URL=
+DIRECT_URL=
+
+AUTH_SECRET=
+
+GITHUB_CLIENT_ID=
+GITHUB_CLIENT_SECRET=
+
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+
+RESEND_API_KEY=
+
+NEXT_PUBLIC_APP_URL="http://localhost:3000" # or your production domain
+```
+
+### To obtain these values follow the steps below
+
+Resend Api: https://resend.com/api-keys
+
+To obtain these values follow the `url` below
+
+| variables           | url                                                 |
+| :--------------     | :------------------------------------------------   |
+| `Database key`      | https://console.neon.tech/                          |
+| `Github oauth key`  | https://github.com/settings/applications/new        |
+| `Google api key`    | https://console.cloud.google.com/apis/credentials/  |
+| `Resend api key`    | https://resend.com/api-keys                         |
+
+
+
+
+### Setup Prisma
+```shell
+npx prisma generate
+npx prisma db push
+```
+to clean prisma db
+```shell
+npx prisma migrate reset  # danger zone
+```
+
+### Start the app
+
+```shell
+npm run dev
+
+# or
+
+yarn dev
+
+# or
+
 pnpm dev
 ```
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Now add shadcn packages:
+## Available commands
 
-```bash
-pnpm dlx shadcn-ui@latest add button card form input dropdown-menu avatar badge sonner switch select dialog
-```
+Running commands with npm `npm run [command]`
 
-Add React Icons:
-```bash
-pnpm add react-icons
-```
-
-Add prisma:
-```bash
-npm i -D prisma
-npm i @prisma/client
-```
-
-add .env in gitignore and add .env file.
-
-now run following commands:
-```bash
-npx prisma init
-```
-it generates prisma folder, prisma/schema.prisma file and fill the .env file with fake DATABASE_URL.
-
-after changing the scheme.prisma and .env file run following commands:
-```bash
-npx prisma generate
-```
-and if runs successfully then run:
-```bash
-npx prisma db push
-npx i @auth/prisma-adapter
-```
-
-now copy User and Account model from @auth/prisma-adapter to schema.prisma file and add   password      String?
-to User model. then run following commands:
-```bash
-npx prisma generate
-npx prisma db push
-```
-
-
-now add bcrypt or bcryptjs:
-```bash
-npm i bcrypt
-npm i -D @types/bcrypt
-
-or
-
-npm i bcryptjs
-npm i -D @types/bcryptjs
-
-```
-to view the database:
-```bash
-npx prisma studio
-```
-
-to reset the database:
-```bash
-npx prisma migrate reset
-```
-add `VerificationToken` model to schema.prisma file and run following commands:
-```bash
-npx prisma generate
-npx prisma db push
-```
-
-Now add following packages:
-```bash
-npm i uuid 
-npm i --save-dev @types/uuid
-```
-
-Now create an account on Resend and add the API key to .env file.
-now add following packages:
-```bash
-npm i resend
-```
-
-Now add following packages:
-```bash
-npm i react-spinners
-```
-
+| command         | description                              |
+| :-------------- | :--------------------------------------- |
+| `dev`           | Starts a development instance of the app |
