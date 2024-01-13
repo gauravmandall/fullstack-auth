@@ -20,7 +20,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 Now add shadcn packages:
 
 ```bash
-pnpm dlx shadcn-ui@latest add button card form input dropdown-menu avatar
+pnpm dlx shadcn-ui@latest add button card form input dropdown-menu avatar badge
 ```
 
 Add React Icons:
