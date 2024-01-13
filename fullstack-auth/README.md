@@ -20,7 +20,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 Now add shadcn packages:
 
 ```bash
-pnpm dlx shadcn-ui@latest add button card form input
+pnpm dlx shadcn-ui@latest add button card form input dropdown-menu avatar
 ```
 
 Add React Icons:
@@ -102,6 +102,8 @@ Now add following packages:
 ```bash
 npm i react-spinners
 ```
+
+
 
 
 
