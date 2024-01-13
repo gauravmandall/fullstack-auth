@@ -24,7 +24,7 @@ export default function Home() {
         </p>
 
         <div>
-          <LoginBtn>
+          <LoginBtn mode="modal" asChild>
             <Button variant={"secondary"} className="w-full">
               Sign In
             </Button>
